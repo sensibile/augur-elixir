@@ -30,7 +30,8 @@ custom classes must fully style the input
 
 - **Always use and maintain this import syntax** in the app.css file for projects generated with `phx.new`
 - **Never** use `@apply` when writing raw css
-- **Always** manually write your own tailwind-based components instead of using daisyUI for a unique, world-class design
+- Use the Phoenix-generated daisyUI setup for base UI components and theme tokens unless a task explicitly asks to remove it.
+- Prefer Tailwind utility classes and custom CSS for application-specific layouts and components; do not introduce additional component libraries without a clear reason.
 - Out of the box **only the app.js and app.css bundles are supported**
   - You cannot reference an external vendor'd script `src` or link `href` in the layouts
   - You must import the vendor deps into app.js and app.css to use them
