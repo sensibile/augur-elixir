@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+    image: augur-elixir:latest
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - "${APP_PORT:-4000}:4000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-}
+      PHX_SERVER: "true"
+      PHX_HOST: ${PHX_HOST:-localhost}
+      POOL_SIZE: ${POOL_SIZE:-5}
+      PORT: "4000"
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-}
